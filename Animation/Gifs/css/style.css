@@ -1,0 +1,53 @@
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,legend,input,select,textarea,button,th,td,blockquote,address,pre{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,input,textarea,select,button,label{font-size:100%;vertical-align:middle;}
+ul,dl,ol{list-style:none;}
+img,fieldset{border:none;}
+img{display:inline-block;overflow:hidden;vertical-align:top;}
+em,address{font-style:normal;}
+sup,sub{vertical-align:baseline;}
+table{border-collapse:collapse;border-spacing:0;}
+q:before{content:"";}
+q:after{content:"";}
+button{cursor:pointer;}
+textarea{word-wrap:break-word;resize:none;}
+
+/*页面*/
+body{
+    background-color: #F49A5B;
+}
+.GIF{
+    width: 800px;
+    height: 600px;
+    margin: auto;
+    background: url(../img/charector.png) 0 0 no-repeat;
+    transform: scale(0.5,0.5);
+    -webkit-transform: scale(0.5,0.5);
+    animation: GIF 1s step-start infinite;
+    -webkit-animation: GIF 1s step-start infinite;
+}
+@-webkit-keyframes GIF{
+    0%{background-position: -0px -6000px;}
+    4.3%{background-position: -0px -600px;}
+    8.6%{background-position: -0px -7200px;}
+    12.9%{background-position: -0px -7800px;}
+    17.2%{background-position: -0px -8400px;}
+    21.5%{background-position: -0px -9000px;}
+    25.8%{background-position: -0px -9600px;}
+    30.1%{background-position: -0px -10200px;}
+    34.4%{background-position: -0px -10800px;}
+    38.7%{background-position: -0px -11400px;}
+    43%{background-position: -0px -12000px;}
+    47.3%{background-position: -0px -12600px;}
+    51.6%{background-position: -0px -13200px;}
+    55.9%{background-position: -0px -6600px;}
+    60.2%{background-position: -0px -0px;}
+    64.5%{background-position: -0px -1200px;}
+    68.8%{background-position: -0px -1800px;}
+    73.1%{background-position: -0px -2400px;}
+    77.4%{background-position: -0px -3000px;}
+    81.7%{background-position: -0px -3600px;}
+    86%{background-position: -0px -4200px;}
+    90.3%{background-position: -0px -4800px;}
+    94.6%{background-position: -0px -5400px;}
+    100%{background-position: -0px -6000px;}
+}

@@ -1,0 +1,43 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态效果</title>
+    <style> 
+        div{
+            width:100px;
+            height:100px;
+            background:blue;
+            transition-property:width;
+            transition-duration:3s;
+            /* Firefox 4 */
+            -moz-transition-property:width;
+            -moz-transition-duration:3s;
+            /* Safari and Chrome */
+            -webkit-transition-property:width;
+            -webkit-transition-duration:3s;
+            /* Opera */
+            -o-transition-property:width;
+            -o-transition-duration:3s;
+        }
+
+        div:hover{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+    <p>请把鼠标指针移动到蓝色的 div 元素上，就可以看到过渡效果。</p>
+
+    <p> <b>注释：</b>
+        本例在 Internet Explorer 中无效。
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shadow Demo</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style type="text/css">
+        body{
+            font-family: Arial;
+            background: url(http://7q5cdt.com1.z0.glb.clouddn.com/bg-canvas_bg.jpg);
+        }
+        body,ul{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style: none;
+
+        }
+        .wrap{
+            width: 680px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: #fafafa; 
+        }
+        .wrap h1{
+            font-size: 20px;
+            text-align: center;
+            line-height: 200px;
+        }
+        .shadow-curl{
+            position: relative;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 80px rgba(0,0,0,0.1) inset;
+            -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 80px rgba(0,0,0,0.1) inset;
+            -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 80px rgba(0,0,0,0.1) inset;
+            -o-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 80px rgba(0,0,0,0.1) inset;
+        }
+        .shadow-curl:after,.shadow-curl:before{
+            content: '';
+            background-color: red; 
+            position: absolute; 
+            z-index: -1;
+            top: 50%;
+            bottom: 0;
+            left:10px;
+            right: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -moz-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            -o-box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            border-radius: 100px/10px;
+        }
+
+        .box{
+            width: 980px;
+            height: auto;
+            clear: both;
+            overflow: hidden;
+            margin: 20px auto;
+        }
+
+        .box li{
+            width: 300px;
+            height:210px;
+            float:left;
+            position: relative;
+            margin: 20px 10px;
+            border:2px solid #efefef;
+            background-color: white;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 60px rgba(0,0,0,0.1) inset;
+            -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 60px rgba(0,0,0,0.1) inset;
+            -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 60px rgba(0,0,0,0.1) inset;
+            -o-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 60px rgba(0,0,0,0.1) inset;
+        }
+        .box li img {
+            display: block;
+            width: 290px;
+            height: 200px;
+            margin: 5px;
+        }
+
+        .box li:before{
+            content:"";
+            position: absolute;
+            z-index: -5;
+            width: 90%;
+            height:80%;
+            left: 20px;
+            bottom: 8px;
+            background: transparent;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            -webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            -moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            -o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+
+            /* 向左倾斜12度，再旋转4度 */
+            transform:skew(-12deg) rotate(-4deg);
+            -webkit-transform:skew(-12deg) rotate(-4deg);
+            -moz-transform:skew(-12deg) rotate(-4deg);
+            -o-transform:skew(-12deg) rotate(-4deg);
+            -ms-transform:skew(-12deg) rotate(-4deg);
+        }
+        .box li:after{
+            content:"";
+            position: absolute;
+            z-index: -5;
+            width: 90%;
+            height:80%;
+            right: 20px;
+            bottom: 8px;
+            background: transparent;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            -webkit-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            -moz-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            -o-box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+
+            /* 向左倾斜12度，再旋转4度 */
+            transform:skew(12deg) rotate(4deg);
+            -webkit-transform:skew(12deg) rotate(4deg);
+            -moz-transform:skew(12deg) rotate(4deg);
+            -o-transform:skew(12deg) rotate(4deg);
+            -ms-transform:skew(12deg) rotate(4deg);
+        };
+        .shadow-luu{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap shadow-curl">
+        <h1>Shadow Effect</h1>
+    </div>
+    <div class="wrap shadow-luu">
+        <h1>Shadow Effect</h1>
+    </div>
+    <ul class="box">
+        <li><img src="http://7q5cdt.com1.z0.glb.clouddn.com/shadow-demo-css3-nut.jpg" alt="nut"></li>
+        <li><img src="http://7q5cdt.com1.z0.glb.clouddn.com/shadow-demo-css3-apple.jpg" alt="apple"></li>
+        <li><img src="http://7q5cdt.com1.z0.glb.clouddn.com/shadow-demo-css3-strawberry.jpg" alt="strawberry"></li>
+    </ul>
+</body>
+</html>
