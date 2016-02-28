@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>为了更好的体验，请将手机/平板竖过来</title>
+    <style type="text/css">
+        .mob-con{
+            width: 100%;
+            height: 100%;
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #32373b;
+            z-index: 9990;
+        }
+        .mob-cen{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 9999;
+        }
+        .mob-cen i{
+            margin: auto;
+            display: block;
+            width: 128px;
+            height: 194px;
+            /*background: url(../images/hengping.png 0 0 no-repeat);*/
+            background: url(images/hengping.png);
+            background-size: 128px 194px;
+            animation: mobileR 1.5s ease infinite alternate;
+            -webkit-animation: mobileR 1.5s ease infinite alternate;
+        }
+        .mob-cen div{
+            font-size: 22px;
+            margin-top: 20px;
+            color: #ffd40a;
+        }
+        @keyframes mobileR{
+            0% {
+                -webkit-transform: rotate(-90deg);
+            }
+            30% {
+                -webkit-transform: rotate(-90deg);
+            }
+            70% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(0deg);
+            }
+        }
+        @-webkit-keyframes mobileR{
+            0% {
+                -webkit-transform: rotate(-90deg);
+            }
+            30% {
+                -webkit-transform: rotate(-90deg);
+            }
+            70% {
+                -webkit-transform: rotate(0deg);
+            }
+            100% {
+                -webkit-transform: rotate(0deg);
+            }
+        }
+
+        /*方法一：*/
+        /* 媒体查询 orientation,定义'height'是否大于或等于'width'。值portrait代表是,landscape代表否  */
+        @media screen and (orientation:landscape) {
+            .mob-con{
+                /*display: block;*/
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="MoblileR" class="mob-con">
+        <div class="mob-cen">
+            <i></i>
+            <div>为了更好的体验，请将手机/平板竖过来</div>
+        </div>
+    </div>
+</body>
+    <!-- 方法二： -->
+    <script type="text/javascript">
+        //判断屏幕横屏
+        function oMobl(){
+            if(document.documentElement.clientHeight >= document.documentElement.clientWidth){
+                return "protrait";
+            }else{
+                return "landscape";
+            }
+        }
+        //显示实例提示
+        function oMobx(){
+            var MoblieR = document.getElementById("MoblileR");
+            var oMobs = oMobl();
+            if(oMobs == "protrait"){
+                MoblieR.style.display = "none";
+            }else{
+                MoblieR.style.display = "block";
+            }
+        }
+        function oInit(){
+            oMobx();
+            window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize",function(){
+                setTimeout(oMobx,200);
+            })
+        }
+        oInit();
+    </script>
+</html>

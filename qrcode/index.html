@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery生成二维码</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+    <div class="ShowClass"></div>
+</body>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+
+    <script type="text/javascript">
+        //生成Canvas二维码：宽度、高度、ClassName
+        function qrcode(Widths,Heights,ShowId){
+            //获取本地连接
+            var Con = document.location.href;
+
+            $(ShowId).qrcode({text: Con, width: Widths, height: Heights});
+        }
+        window.onload = function(){
+            //生成二维码：宽度、高度、ClassName
+            qrcode(200,200,'.ShowClass');
+        }
+    </script>
+</html>

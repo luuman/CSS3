@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS生成二维码</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <link style="text/css" rel="stylesheet" href="css/index.css" />
+    
+    <script src="js/jquery-2.1.4.min.js"></script>
+
+    <!--
+    <script type="text/javascript" src="js/jquery.qrcode.js"></script>
+    -->
+    <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="js/qrcode.js"></script>
+    
+    <script type="text/javascript">
+    
+        //解决中文乱码问题,要生成二维码的字符先由此转义
+        function utf16to8(str) {   
+            var out, i, len, c;   
+            out = "";   
+            len = str.length;   
+            for(i = 0; i < len; i++) {   
+            c = str.charCodeAt(i);   
+            if ((c >= 0x0001) && (c <= 0x007F)) {   
+                out += str.charAt(i);   
+            } else if (c > 0x07FF) {   
+                out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));   
+                out += String.fromCharCode(0x80 | ((c >>  6) & 0x3F));   
+                out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));   
+            } else {   
+                out += String.fromCharCode(0xC0 | ((c >>  6) & 0x1F));   
+                out += String.fromCharCode(0x80 | ((c >>  0) & 0x3F));   
+            }   
+            }   
+            return out;
+        }
+        
+        //生成二维码
+        function gerenrateCode(){
+            //获取输入内容
+            var con = $('#text_content').val();
+            if(con.length < 1){
+                alert('请先输入要生成的内容!');   
+                return;
+            }
+            //转义(中文乱码)
+            con = utf16to8(con);
+            //清空
+            $('#showDiv').empty();
+            //执行生成
+            $('#showDiv').qrcode({text: con, width: 270, height: 270});
+        }
+    
+    </script>
+</head>
+<body>
+    <div class="main_box">
+        <div class="box_left">
+            <p><textarea id="text_content" name="text" class="main_text" placeholder="请输入文字内容，支持普通文本和网址！"></textarea></p>
+            <div class="form_btn">
+                <a title="生成二维码" id="click-create" class="button transit" hidefocus="true" style="cursor:pointer;" href="javascript:gerenrateCode();">生成二维码</a>
+            </div>
+        </div>
+        <div class="box_right">
+            <div id="showDiv" class="show_div">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
